@@ -1,4 +1,4 @@
-import { ApolloServer } from "@apollo/server";
+import { ApolloServer } from '@apollo/server';
 import { User } from './user'
 
 async function initServer() {
@@ -23,7 +23,7 @@ async function initServer() {
     },
   });
 
-  // start the graphQL server
+  // start graphQL server
   await server.start();
 
   return server;
