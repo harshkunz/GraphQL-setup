@@ -1,5 +1,5 @@
-import express from "express";
-import { expressMiddleware } from "@apollo/server/express4";
+import express from 'express';
+import { expressMiddleware } from '@apollo/server/express4';
 import initServer from './graphQL'
 import UserService from './services/user'
 
@@ -10,7 +10,7 @@ async function init() {
   app.use(express.json());
 
   app.get("/", (req, res) => {
-    res.json({ message: "Server is running" });
+    res.json({ message: 'Server is running'});
   });
 
   app.use(
@@ -18,7 +18,7 @@ async function init() {
     expressMiddleware(await initServer(), {
       context: async ({ req }) => {
 
-        const token = req.headers["token"];
+        const token = req.headers['token'];
 
         try {
           const user = UserService.decodeJWTToken(token as string);

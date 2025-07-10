@@ -18,7 +18,7 @@ const queries = {
       const user = await UserService.getUserById(id);
       return user;
     }
-    throw new Error("Invalid context or user not found");
+    throw new Error('Invalid context or user not found');
   },
 };
 
